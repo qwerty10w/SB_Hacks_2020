@@ -1,0 +1,103 @@
+@import
+url("https://fonts.googleapis.com/css?family=Raleway:300,400,700,900");
+
+*{
+  box-sizing: border-box;
+}
+
+
+body{
+  margin: 0;
+  font-family: 'Raleway' , sans-serif;
+  text-align: center;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.container{
+  width: 95%;
+  margin: 0 auto;
+}
+
+.title{
+  font-size: 2.5rem;
+}
+
+.title span{
+  font-weight: 300;
+  font-size: .9em;
+  display: block;
+}
+
+@media(min-width: 60rem){
+  .title{
+    font-size: 3.5em;
+  }
+  .Button1{
+    font-size: 3rem;
+  }
+}
+
+
+/*header
+==========================================*/
+header{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 1em;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li{
+  display: inline-block;
+  margin: 1em;
+}
+
+nav a{
+  font-weight: 900;
+  font-size: .85em;
+  padding: 0.75em;
+  color: blue;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a:hover,
+nav a:focus{
+  color: #DDD;
+}
+
+.home-front{
+  background-image: url("FrontBG.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 10em 0;
+}
+
+/*buttons*/
+.Button1{
+  font-size: .9em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  font-weight: 700;
+  padding: 0.6em 1.5em ;
+  color: white;
+}
+
+.Button1:hover,
+.Button1:focus{
+  color: black;
+  background: #fff;
+}
