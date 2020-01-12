@@ -11,6 +11,7 @@
   "contributors": [
     "Yashar Fakhari (https://github.com/YasharF)"
   ],
+  "main":"app.js",
   "scripts": {
     "postinstall": "npm rebuild node-sass",
     "start": "node app.js",
