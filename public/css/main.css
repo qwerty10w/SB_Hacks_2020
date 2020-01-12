@@ -13219,7 +13219,7 @@ readers do not read off random characters that represent icons */
   .navbar-light .navbar-toggler:hover {
     background: #dddddd; }
   .navbar-light.bg-light {
-    background-color: #ffffff !important; }
+    background-color: #f212 !important; }
 
 .navbar-toggler-icon {
   color: #333333; }

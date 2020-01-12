@@ -74,6 +74,7 @@ app.use(sass({
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+console.log(process.env.MONGODB_URI);
 app.use(session({
   resave: true,
   saveUninitialized: true,

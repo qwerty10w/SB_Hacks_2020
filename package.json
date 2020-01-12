@@ -39,6 +39,7 @@
     "express-session": "^1.17.0",
     "express-status-monitor": "^1.2.8",
     "fbgraph": "^1.4.4",
+    "firebase": "^7.6.2",
     "googleapis": "^46.0.0",
     "instagram-node": "^0.5.8",
     "jquery": "^3.4.1",
