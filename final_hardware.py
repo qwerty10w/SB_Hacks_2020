@@ -1,5 +1,13 @@
+#Lawrence Su
+#CrashMaps
+#sends crash data to Firebase live database
+
+
+
+#enable I2C commands before u compile
+#settings idr which ones
+#create a firebase live database and download the credentials as an admin
 import smbus	
-#import SMBus module of I2C
 import time 
 from time import sleep
 import firebase_admin
@@ -20,6 +28,9 @@ firebase_admin.initialize_app(cred, {
 #                },
 #
  #       })
+
+
+ #if u wanna start off with an object in the database
 #print(ref.get())
 #default.app = firebase_admin.initalize.app()
 #firebase=firebase.FirebaseApplication('https://crash-map.firebaseio.com')
@@ -44,23 +55,17 @@ GYRO_ZOUT_H  = 0x47
 
 
 def MPU_Init():
-    #write to sample rate register
         bus.write_byte_data(Device_Address, SMPLRT_DIV, 7)
 
-        #Write to power management register
         bus.write_byte_data(Device_Address, PWR_MGMT_1, 1)
 
-        #Write to Configuration register
         bus.write_byte_data(Device_Address, CONFIG, 0)
 
-        #Write to Gyro configuration register
         bus.write_byte_data(Device_Address, GYRO_CONFIG, 24)
 
-        #Write to interrupt enable register
         bus.write_byte_data(Device_Address, INT_ENABLE, 1)
 
 def read_raw_data(addr):
-    #Accelero and Gyro value are 16-bit
         high = bus.read_byte_data(Device_Address, addr)
         low = bus.read_byte_data(Device_Address, addr+1)
 
@@ -78,7 +83,8 @@ Device_Address = 0x68   # MPU6050 device address
 
 MPU_Init()
 
-print (" Reading Data of Gyroscope and Accelerometer")
+print (" Gyroscope x y z data followed by accelerometer x y z data")
+#theres also temperature but we dont need it for this purpose
 #doc_ref = db.collection(u'crashDetection').document(u'ligma')
 #doc_ref.set({
 #    u'crashed': true
@@ -88,12 +94,12 @@ avgy=[0,0,0,0,0]
 avgz=[0,0,0,0,0]
 while True:
 
-    #Read Accelerometer raw value
+    #Read Accelerometer
         acc_x = read_raw_data(ACCEL_XOUT_H)
         acc_y = read_raw_data(ACCEL_YOUT_H)
         acc_z = read_raw_data(ACCEL_ZOUT_H)
 
-        #Read Gyroscope raw value
+        #Read Gyroscope
         gyro_x = read_raw_data(GYRO_XOUT_H)
         gyro_y = read_raw_data(GYRO_YOUT_H)
         gyro_z = read_raw_data(GYRO_ZOUT_H)
